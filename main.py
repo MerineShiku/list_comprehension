@@ -116,10 +116,10 @@ a = [ [2, 4, 6, 8 ],
     [ 7, 5, 3, 1 ] ] 
 
 #print(len(a))     #output 4      
-for i in range(len(a)) : 
-  for j in range(len(a[i])) : 
-     print(a[i][j], end=" ")
-  print()
+# for i in range(len(a)) : 
+#   for j in range(len(a[i])) : 
+#      print(a[i][j], end=" ")
+#   print()
 
 
 
@@ -146,18 +146,18 @@ Example:
 
 '''
   
-a = [[2, 4, 6, 8, 10], [3, 6, 9, 12, 15], [4, 8, 12, 16, 20]]
-a.append([5, 10, 15, 20, 25])
-print(a)
+# a = [[2, 4, 6, 8, 10], [3, 6, 9, 12, 15], [4, 8, 12, 16, 20]]
+# a.append([5, 10, 15, 20, 25])
+# print(a)
 
 #Output: [[2, 4, 6, 8, 10], [3, 6, 9, 12, 15], [4, 8, 12, 16, 20], [5, 10, 15, 20, 25]]
 
 '''
 # Extending a sublist 
 '''
-a = [[2, 4, 6, 8, 10], [3, 6, 9, 12, 15], [4, 8, 12, 16, 20]]
-a[0].extend([12, 14, 16, 18])
-print(a)
+# a = [[2, 4, 6, 8, 10], [3, 6, 9, 12, 15], [4, 8, 12, 16, 20]]
+# a[0].extend([12, 14, 16, 18])
+# print(a)
 #Output:  [[2, 4, 6, 8, 10, 12, 14, 16, 18], [3, 6, 9, 12, 15], [4, 8, 12, 16, 20]]
 
 
@@ -189,8 +189,52 @@ gives you: [1, 2, 3, 4, 5]
 
 # Reversing a sublist 
   
-a = [[2, 4, 6, 8, 10], [3, 6, 9, 12, 15], [4, 8, 12, 16, 20]]
-a[2].reverse()
-print(a)
-Output:
-[[2, 4, 6, 8, 10], [3, 6, 9, 12, 15], [20, 16, 12, 8, 4]]                            
+# a = [[2, 4, 6, 8, 10], [3, 6, 9, 12, 15], [4, 8, 12, 16, 20]]
+# a[2].reverse()
+# print(a)
+# Output:
+# [[2, 4, 6, 8, 10], [3, 6, 9, 12, 15], [20, 16, 12, 8, 4]]                            
+
+a = [ [2, 4, 6, 8 ],
+    [ 1, 3, 5, 7 ],
+    [ 8, 6, 4, 2 ],
+    [ 7, 5, 3, 1 ] ]
+#print(len(a))     #output 4
+# for i in range(len(a)) :
+#   for j in range(len(a[i])) :
+#      print(a[i][j], end=" ")
+#   print()
+
+test = [(a[i][j])  for i in range(len(a))  for j in range(len(a[i]))]
+print(test )
+
+
+
+matrix = [
+    [1, 2, 3, 4],
+    [5, 6, 7, 8],
+    [9, 10, 11, 12],
+]
+
+# [[1, 5, 9], [2, 6, 10], [3, 7, 11], [4, 8, 12]]
+res = [[row[i] for row in matrix] for i in range(4)]
+
+print(res)
+
+
+
+matrix = [
+    [1, 2, 3, 4],
+    [5, 6, 7, 8],
+    [9, 10, 11, 12],
+]
+
+res = []
+for i in range(4):
+    res_row = []
+    for row in matrix:
+        res_row.append(row[i])
+    res.append(res_row)
+
+# [[1, 5, 9], [2, 6, 10], [3, 7, 11], [4, 8, 12]]
+print(res)
